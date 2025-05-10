@@ -1,7 +1,6 @@
 *{
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    
 }
 body{
     font-family: 'Poppins',sans-serif;
@@ -17,9 +16,7 @@ header{
     color: white;
     padding: 15px 30px;
 }
-header ul {
-     list-style: none;
-}
+
 
  header li{
     display: inline-block;
@@ -30,15 +27,7 @@ header a{
     text-decoration: none;
     color: white;
 }
-header ul li a:hover {
-    text-decoration: underline;
-    color: blue;
 
-}
-button:hover {
-    background-color:green ;
-    cursor: pointer;
-}
 .row{
     display: flex;
     justify-content: space-around;
@@ -48,6 +37,10 @@ button:hover {
 .box{
     width: 600px;
     padding: 50px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px;
 }
 .btn-signup{
     background-color: orange;
