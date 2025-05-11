@@ -2,7 +2,6 @@
     margin: 0;
     
 }
-
 .container{
     width: 100%;
     margin: auto;
@@ -15,8 +14,6 @@ header{
     color: white;
     padding: 10px;
 }
-
-
  header li{
     display: inline-block;
     font-size: 20px;
@@ -25,7 +22,6 @@ header{
 header a{
     text-decoration: none;
 }
-
 .row{
     display: flex;
     justify-content: space-around;
