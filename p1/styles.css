@@ -60,5 +60,5 @@ header a{
 .box:hover{
     border: 5px solid blue;
     background-color: yellow;
-    transform: scale(1,1,1,1);
+    transform: scale(1.1,1.1);
 }
