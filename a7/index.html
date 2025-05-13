@@ -2,57 +2,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Login</title>
-    <style>
-        body {
-            font-family: Georgia, serif;
-            margin: 20px;
-        }
-        h1 {
-            font-size: 32px;
-        }
-        label {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        input {
-            font-size: 18px;
-            margin: 10px 0;
-            padding: 6px;
-            width: 300px;
-        }
-        button {
-            font-size: 18px;
-            margin-top: 10px;
-            padding: 6px 12px;
-        }
-        #output {
-            margin-top: 30px;
-            font-size: 20px;
-        }
-    </style>
+  <title>Login</title>
 </head>
 <body>
 
-    <h1>Login</h1>
+  
 
-    <label for="email">Email:</label><br>
-    <input type="text" id="email"><br><br>
+  <form id="loginForm">
+    <label for="email"> Enter Email:</label><br>
+    <input type="text" id="email" name="email"><br><br>
 
-    <label for="password">Password:</label><br>
-    <input type="password" id="password"><br><br>
+    <label for="password"> Enter Password:</label><br>
+    <input type="password" id="password" name="password"><br><br>
 
-    <button onclick="submitForm()">Submit</button>
+    <button type="button" onclick="displayDetails()">Submit</button>
+  </form>
 
-    <div id="output">
-        <h2>Information:</h2>
-        <p id="emailOutput"></p>
-        <p id="passwordOutput"></p>
-    </div>
+  <h3>Above information:</h3>
+  <p id="output"></p>
 
-    <script src="script.js"></script>
+  <script>
+    function displayDetails() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      document.getElementById("output").innerHTML = 
+        "Email: " + email + "<br>Password: " + password;
+    }
+  </script>
+
 </body>
 </html>
-
-
-
