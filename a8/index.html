@@ -1,45 +1,72 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ASSIGNMENT-6</title>
+    <title>Arithmetic operations</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            padding: 30px;
         }
+
         h1 {
             font-weight: bold;
         }
+
         .container {
-            margin-top: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
         }
+
+        .inputs {
+            display: flex;
+            flex-direction: column;
+        }
+
         input {
-            padding: 5px;
+            padding: 10px;
             width: 200px;
-            margin-bottom: 10px;
-            display: block;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border: 2px solid black;
         }
+
         button {
-            padding: 6px 12px;
+            padding: 8px 16px;
+            font-size: 16px;
+            font-weight: bold;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: white;
             cursor: pointer;
+        }
+
+        .results {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .results p {
+            margin: 8px 0;
         }
     </style>
 </head>
 <body>
-
-    <h1>Arithmetic operations</h1>
+    
 
     <div class="container">
-        <input type="number" id="num1" placeholder="Enter the num1"><br>
-        <input type="number" id="num2" placeholder="Enter the num2"><br>
-        <button onclick="calculate()">Submit</button>
-
-        <p id="sum"></p>
-        <p id="sub"></p>
-        <p id="mul"></p>
-        <p id="div"></p>
+        <div class="inputs">
+            <input type="number" id="num1" placeholder="Enter the num1">
+            <input type="number" id="num2" placeholder="Enter the num2">
+            <button onclick="calculate()">Submit</button>
+        </div>
+        <div class="results">
+            <p id="sum"></p>
+            <p id="sub"></p>
+            <p id="mul"></p>
+            <p id="div"></p>
+        </div>
     </div>
 
     <script>
@@ -48,10 +75,10 @@
             var b = parseFloat(document.getElementById("num2").value);
 
             if (!isNaN(a) && !isNaN(b)) {
-                document.getElementById("sum").innerText = "Sum is: " + (a + b);
-                document.getElementById("sub").innerText = "Sub is: " + (a - b);
-                document.getElementById("mul").innerText = "Mul is: " + (a * b);
-                document.getElementById("div").innerText = "Div is: " + (b !== 0 ? (a / b).toFixed(2) : "Cannot divide by zero");
+                document.getElementById("sum").innerText = "Addition: " + (a + b);
+                document.getElementById("sub").innerText = "Subtraction: " + (a - b);
+                document.getElementById("mul").innerText = "Multiplication: " + (a * b);
+                document.getElementById("div").innerText = "Division: " + (b !== 0 ? (a / b).toFixed(2) : "Cannot divide by zero");
             } else {
                 document.getElementById("sum").innerText = "Please enter valid numbers.";
                 document.getElementById("sub").innerText = "";
