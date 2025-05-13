@@ -1,8 +1,8 @@
 
-function displayData() {
+function showData() {
     const email = document.getElementById("email").value;
     const number = document.getElementById("number").value;
 
-    const output = document.getElementById("output");
-    output.textContent = ${email} , ${number}
+    const resultDiv = document.getElementById("result");
+    resultDiv.textContent = ${email} , ${number};
 }
