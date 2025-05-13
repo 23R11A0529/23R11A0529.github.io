@@ -1,54 +1,58 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form Display</title>
+    <title> Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Georgia, serif;
+            margin: 20px;
         }
-        .input-box {
-            font-size: 28px;
-            font-weight: bold;
-            padding: 10px;
-            margin: 15px;
-            border: 3px solid black;
-            width: 350px;
+        h1 {
+            font-size: 32px;
         }
-        .submit-btn {
-            font-size: 24px;
-            font-weight: bold;
-            padding: 10px 30px;
-            border: 3px solid black;
-            border-radius: 20px;
-            background-color: white;
-            cursor: pointer;
-            margin: 15px;
-        }
-        #result {
-            margin-top: 30px;
+        label {
             font-size: 20px;
             font-weight: bold;
-            margin-left: 15px;
         }
-        hr {
+        input {
+            font-size: 18px;
+            margin: 10px 0;
+            padding: 6px;
+            width: 300px;
+        }
+        button {
+            font-size: 18px;
+            margin-top: 10px;
+            padding: 6px 12px;
+        }
+        #output {
             margin-top: 30px;
-            width: 90%;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
 
-    <input type="text" id="email" class="input-box" placeholder="Enter email">
-    <input type="text" id="number" class="input-box" placeholder="Enter number">
-    <button class="submit-btn" onclick="showData()">Submit</button>
+    <h1>Login</h1>
 
-    <hr>
-    <div id="result"></div>
+    <label for="email">Email:</label><br>
+    <input type="text" id="email"><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password"><br><br>
+
+    <button onclick="submitForm()">Submit</button>
+
+    <div id="output">
+        <h2>Information:</h2>
+        <p id="emailOutput"></p>
+        <p id="passwordOutput"></p>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
 
 
 
