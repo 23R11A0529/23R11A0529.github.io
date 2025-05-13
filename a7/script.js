@@ -1,8 +1,12 @@
 
-function showData() {
+function submitForm() {
     const email = document.getElementById("email").value;
-    const number = document.getElementById("number").value;
+    const password = document.getElementById("password").value;
 
-    const resultDiv = document.getElementById("result");
-    resultDiv.textContent = ${email} , ${number};
+    document.getElementById("emailOutput").textContent = Email: ${email};
+    document.getElementById("passwordOutput").textContent = Password: ${password};
 }
+
+
+
+
