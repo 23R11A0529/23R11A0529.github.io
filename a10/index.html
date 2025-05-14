@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fruit Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    .search-box {
+      margin-bottom: 20px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Enter fruit name">
+    <button onclick="searchItem()">Search</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    const fruits = ["Apple", "Orange", "Mango", "Banana"];
+
+    function searchItem() {
+      const input = document.getElementById('searchInput').value.trim();
+      const resultDiv = document.getElementById('result');
+
+      const found = fruits.filter(item => item.toLowerCase() === input.toLowerCase());
+
+      if (found.length > 0) {
+        resultDiv.textContent = found[0];
+      } else {
+        resultDiv.textContent = "Not Available";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
