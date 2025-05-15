@@ -4,53 +4,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Handling Array of Objects</title>
+  <title>Fruits</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 150px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
     .row {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      justify-content: center;
+      gap: 20px;
     }
+
     .card {
-      border: 2px solid black;
-      padding: 10px;
-      width: 150px;
+      background-color: white;
+      border-radius: 10px;
+      padding: 15px;
+      width: 180px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
       text-align: center;
     }
+
     .card img {
       width: 100%;
       height: 100px;
       object-fit: cover;
+      border-radius: 5px;
     }
-    input {
-      margin: 5px;
-      padding: 5px;
+
+    .card h2 {
+      margin: 10px 0 5px;
     }
-    button {
-      padding: 5px 10px;
+
+    .card h3 {
+      color: green;
+      margin: 0 0 10px;
+    }
+
+    .add-cart {
+      background-color: #28a745;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .add-cart:hover {
+      background-color: #218838;
     }
   </style>
 </head>
 <body>
-  <h1>Handling Array of Objects</h1>
+  <h1>Fruit Price List</h1>
 
-  <!-- Form to Add Products -->
-  <div>
+  <div class="input-group">
     <input type="number" id="id" placeholder="ID" />
     <input type="text" id="name" placeholder="Name" />
     <input type="number" id="price" placeholder="Price" />
     <input type="text" id="imgUrl" placeholder="Image URL" />
-    <button onclick="addProduct()">Add</button>
+    <button onclick="addProduct()">Add Fruit</button>
   </div>
 
-  <!-- Container for Displaying Products -->
   <div id="container" class="row"></div>
 
   <script>
     const products = [
-      { id: 1, name: "Apple", price: 200, imgUrl: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2Ffresh-apple-fruit-19835557748.html&psig=AOvVaw2XKMRwu3Pn8W6ZBR542gmG&ust=1747406678383000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIDw8JzbpY0DFQAAAAAdAAAAABAE" },
-      { id: 2, name: "Orange", price: 150, imgUrl: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2Fmini-orange-fruit-27379642048.html&psig=AOvVaw2dWX2RGjZ4c4oeFcg-lFyp&ust=1747406765997000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNiZpMXbpY0DFQAAAAAdAAAAABAE" },
-      { id: 3, name: "Mango", price: 180, imgUrl:"https://www.google.com/imgres?q=mangoes&imgurl=https%3A%2F%2Faamrai.com%2Fwp-content%2Fuploads%2F2024%2F01%2FGroup-71.webp&imgrefurl=https%3A%2F%2Faamrai.com%2Fbuy-mango-online%2F&docid=3kuGAIjz5dY0bM&tbnid=0ZxnYiLaiwoeLM&vet=12ahUKEwjjrYvi26WNAxXUUGwGHZ8hNq0QM3oECHEQAA..i&w=2520&h=1848&hcb=2&ved=2ahUKEwjjrYvi26WNAxXUUGwGHZ8hNq0QM3oECHEQAA"  },
+      { id: 1, name: "Apple", price: 250, imgUrl:"https://www.google.com/imgres?q=apple&imgurl=https%3A%2F%2F5.imimg.com%2Fdata5%2FAK%2FRA%2FMY-68428614%2Fapple.jpg&imgrefurl=https%3A%2F%2Fwww.indiamart.com%2Fproddetail%2Ffresh-apple-fruit-19835557748.html&docid=XKRdhKhDtDIcUM&tbnid=Lxcb-9iKOWDUBM&vet=12ahUKEwjQteS83qWNAxWPnGMGHVbEJyYQM3oECBoQAA..i&w=1595&h=1204&hcb=2&ved=2ahUKEwjQteS83qWNAxWPnGMGHVbEJyYQM3oECBoQAA"  },
+      { id: 2, name: "Orange", price: 100, imgUrl:"https://www.google.com/imgres?q=orange%20fruit&imgurl=https%3A%2F%2Fwww.jiomart.com%2Fimages%2Fproduct%2Foriginal%2F590000025%2Forange-imported-1-kg-product-images-o590000025-p590000025-0-202410011652.jpg%3Fim%3DResize%3D(420%2C420)&imgrefurl=https%3A%2F%2Fwww.jiomart.com%2Fp%2Fgroceries%2Forange-imported-1-kg%2F590000025&docid=vIHp7EJhILE2vM&tbnid=tu52lZZfTT4aGM&vet=12ahUKEwjI19nm3qWNAxVORmcHHa_-M_MQM3oECBYQAA..i&w=420&h=420&hcb=2&ved=2ahUKEwjI19nm3qWNAxVORmcHHa_-M_MQM3oECBYQAA"},
+      { id: 3, name: "Mango", price: 80, imgUrl: "https://www.google.com/imgres?q=mangoes&imgurl=https%3A%2F%2Fichef.bbci.co.uk%2Fimages%2Fic%2F1920x1080%2Fp06hk0h6.jpg&imgrefurl=https%3A%2F%2Fwww.bbc.co.uk%2Fprogrammes%2Farticles%2F2hyty1swxN9b0sBfc5nfjC6%2F13-juicy-facts-about-mangoes&docid=NcEz8Augqj2mrM&tbnid=C4gujcaDW3a58M&vet=12ahUKEwjUh9n03qWNAxXfRmcHHXu6GXoQM3oECGsQAA..i&w=1920&h=1080&hcb=2&ved=2ahUKEwjUh9n03qWNAxXfRmcHHXu6GXoQM3oECGsQAA" },
     ];
 
     function renderProducts() {
@@ -59,9 +117,10 @@
       products.forEach(product => {
         str += `
           <div class="card">
-            <img src="${product.imgUrl}" alt="${product.name}" />
+            <img src="${product.imgUrl}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/200x100?text=Image+Not+Found';"/>
             <h2>${product.name}</h2>
-            <h3>${product.price}</h3>
+            <h3>₹${product.price}</h3>
+            <button class="add-cart" onclick="addToCart('${product.name}')">Add to Cart</button>
           </div>
         `;
       });
@@ -82,7 +141,6 @@
           imgUrl: imgUrl
         });
         renderProducts();
-        // Clear inputs
         document.getElementById("id").value = "";
         document.getElementById("name").value = "";
         document.getElementById("price").value = "";
@@ -90,6 +148,10 @@
       } else {
         alert("Please fill all fields");
       }
+    }
+
+    function addToCart(productName) {
+      alert(${productName} added to cart!);
     }
 
     renderProducts();
