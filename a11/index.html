@@ -1,84 +1,113 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .row {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
+<head>
+  <meta charset="UTF-8">
+  <title>Fruits</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .form-inputs {
+      margin: 20px;
+    }
+    .form-inputs input {
+      margin: 5px;
+      padding: 5px;
+    }
+    .card {
+      display: inline-block;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 10px;
+      background-color: #e8b261;
+      padding: 10px;
+    }
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .card-title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .card-price {
+      margin-bottom: 10px;
+    }
+    .card button {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="form-inputs">
+    <input type="text" id="id" placeholder="id">
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="price" placeholder="price">
+    <input type="text" id="url" placeholder="url">
+    <button onclick="addItem()">Add</button>
+  </div>
 
-      .row div {
-        background-color: orange;
-        margin: 10px;
-        padding: 10px;
-        width: 200px;
-      }
-    </style>
-  </head>
-  <body onload="dispProducts()">
-    <h1>Handling Array of Objects</h1>
-    <p>
-      <input type="number" id="txtId" />
-      <input type="text" id="txtName" />
-      <input type="number" id="txtPrice" />
-      <input type="text" id="txtUrl" />
-      <button onclick="addProduct()">Add</button>
-    </p>
-    <div id="container" class="row"></div>
-    <script>
-      const products = [
-        {
-          id: 1,
-          name: "Apple",
-          price: 200,
-          imgUrl: "apple.png",
-        },
-        {
-          id: 2,
-          name: "Orange",
-          price: 150,
-          imgUrl: "orange.png",
-        },
-        {
-          id: 3,
-          name: "Mango",
-          price: 180,
-          imgUrl: "mango.png",
-        },
-      ];
+  <div id="container">
+    <!-- Cards will be added here -->
+  </div>
 
-      function addProduct() {
-        let id = document.querySelector("#txtId").value;
-        let name = document.querySelector("#txtName").value;
-        let price = document.querySelector("#txtPrice").value;
-        let imgUrl = document.querySelector("#txtUrl").value;
-        const obj = {
-          id: id,
-          name: name,
-          price: price,
-          imgUrl: imgUrl,
-        };
-        products.push(obj)
-        dispProducts()
-      }
+  <script>
+    let items = [
+      { id: 1, name: "Apple", price: 250, url: "..\images\apple.png" },
+      { id: 2, name: "Orange", price: 100, url: "..\images\orange.png" },
+      { id: 3, name: "Mango", price: 80, url: "..\images\mango.png" }
+    ];
 
-      function dispProducts() {
-        let str = "";
-        products.map((value) => {
-          str += `<div>
-                <img src=${value.imgUrl}/>
-                <h2>${value.name}</h2>
-                <h3>${value.price}</h3>
-                <button>Add to Cart</button>
-                <button>Delete</button>
-                </div>`;
-        });
-        container.innerHTML = str;
+    function renderItems() {
+      const container = document.getElementById("container");
+      container.innerHTML = "";
+      items.forEach((item, index) => {
+        container.innerHTML += `
+          <div class="card">
+            <img src="${item.url}" alt="${item.name}">
+            <div class="card-title">${item.name}</div>
+            <div class="card-price">₹${item.price}</div>
+            <button onclick="addToCart(${index})">Add to Cart</button>
+            <button onclick="deleteItem(${index})">Delete</button>
+          </div>
+        `;
+      });
+    }
+
+    function addToCart(index) {
+      alert(${items[index].name} added to cart!);
+    }
+
+    function deleteItem(index) {
+      items.splice(index, 1);
+      renderItems();
+    }
+
+    function addItem() {
+      const id = document.getElementById("id").value;
+      const name = document.getElementById("name").value;
+      const price = document.getElementById("price").value;
+      const url = document.getElementById("url").value;
+      if (id && name && price && url) {
+        items.push({ id, name, price, url });
+        renderItems();
+        document.getElementById("id").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("price").value = "";
+        document.getElementById("url").value = "";
+      } else {
+        alert("Please fill all fields");
       }
-    </script>
-  </body>
+    }
+
+    window.onload = renderItems;
+  </script>
+</body>
 </html>
+
