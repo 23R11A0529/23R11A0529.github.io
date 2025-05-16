@@ -2,118 +2,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fruits</title>
+  <meta charset="UTF-8">
+  <title>Fruits list</title>
   <style>
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .card {
-      border: 2px solid black;
-      padding: 10px;
-      width: 150px;
+    body {
+      font-family: Arial, sans-serif;
       text-align: center;
-      background-color: #fff;
-      border-radius: 10px;
     }
-    .card img {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 5px;
+    .form-inputs {
+      margin: 20px;
     }
-    input {
+    .form-inputs input {
       margin: 5px;
       padding: 5px;
     }
-    button {
-      padding: 5px 10px;
-      border: none;
+    .card {
+      display: inline-block;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 10px;
+      background-color: #e8b261;
+      padding: 10px;
+    }
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
       border-radius: 5px;
-      cursor: pointer;
     }
-    .add-btn {
-      background-color: #007bff;
-      color: white;
+    .card-title {
+      font-weight: bold;
+      font-size: 18px;
     }
-    .cart-btn {
-      background-color: #28a745;
-      color: white;
-      margin-top: 10px;
+    .card-price {
+      margin-bottom: 10px;
+    }
+    .card button {
+      margin: 5px;
     }
   </style>
 </head>
 <body>
   <h1>Fruits</h1>
-
-  <!-- Form to Add Products -->
-  <div>
-    <input type="number" id="id" placeholder="ID" />
-    <input type="text" id="name" placeholder="Name" />
-    <input type="number" id="price" placeholder="Price" />
-    <input type="text" id="imgUrl" placeholder="Image URL" />
-    <button class="add-btn" onclick="addProduct()">Add</button>
+  <div class="form-inputs">
+    <input type="text" id="id" placeholder="id">
+    <input type="text" id="name" placeholder="name">
+    <input type="text" id="price" placeholder="price">
+    <input type="text" id="url" placeholder="url">
+    <button onclick="addItem()">Add</button>
   </div>
 
-  <!-- Container for Displaying Products -->
-  <div id="container" class="row"></div>
+  <div id="container">
+    <!-- Cards will be added here -->
+  </div>
 
   <script>
-    const products = [
-      { id: 1, name: "Apple", price: 250, imgUrl:"...\images\image copy.png"},
-      { id: 2, name: "Orange", price: 100, imgUrl:"...\images\image copy 2.png"},
-      { id: 3, name: "Mango", price: 80, imgUrl:"...\images\image copy 3.png"}
+    let items = [
+      { id: 1, name: "Apple", price: 150, url: "...\images\image copy.png" },
+      { id: 2, name: "Orange", price: 150, url: "...\images\image copy 2.png" },
+      { id: 3, name: "Mango", price: 180, url: "...\images\image copy 3.png" }
     ];
 
-    function renderProducts() {
+    function renderItems() {
       const container = document.getElementById("container");
-      let str = "";
-      products.forEach(product => {
-        str += `
+      container.innerHTML = "";
+      items.forEach((item, index) => {
+        container.innerHTML += `
           <div class="card">
-            <img src="${product.imgUrl}" alt="${product.name}" />
-            <h2>${product.name}</h2>
-            <h3>₹${product.price}</h3>
-            <button class="cart-btn" onclick="addToCart('${product.name}')">Add to Cart</button>
+            <img src="${item.url}" alt="${item.name}">
+            <div class="card-title">${item.name}</div>
+            <div class="card-price">₹${item.price}</div>
+            <button onclick="addToCart(${index})">Add to Cart</button>
+            <button onclick="deleteItem(${index})">Delete</button>
           </div>
         `;
       });
-      container.innerHTML = str;
     }
 
-    function addProduct() {
+    function addToCart(index) {
+      alert(${items[index].name} added to cart!);
+    }
+
+    function deleteItem(index) {
+      items.splice(index, 1);
+      renderItems();
+    }
+
+    function addItem() {
       const id = document.getElementById("id").value;
       const name = document.getElementById("name").value;
       const price = document.getElementById("price").value;
-      const imgUrl = document.getElementById("imgUrl").value;
-
-      if (id && name && price && imgUrl) {
-        products.push({
-          id: parseInt(id),
-          name: name,
-          price: parseInt(price),
-          imgUrl: imgUrl
-        });
-        renderProducts();
+      const url = document.getElementById("url").value;
+      if (id && name && price && url) {
+        items.push({ id, name, price, url });
+        renderItems();
         document.getElementById("id").value = "";
         document.getElementById("name").value = "";
         document.getElementById("price").value = "";
-        document.getElementById("imgUrl").value = "";
+        document.getElementById("url").value = "";
       } else {
         alert("Please fill all fields");
       }
     }
 
-    function addToCart(productName) {
-      alert(${productName} added to cart!);
-    }
-
-    renderProducts();
+    window.onload = renderItems;
   </script>
 </body>
 </html>
-
