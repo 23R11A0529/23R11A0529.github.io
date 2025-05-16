@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FOODMART Grocery Store</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+    header, footer {
+      background: #f8f8f8;
+      padding: 20px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+    .topbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffa500;
+    }
+    .search-bar {
+      flex: 1;
+      margin: 0 20px;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+    .hero {
+      display: flex;
+      padding: 40px;
+      background: #f0f8ff;
+    }
+    .hero .left {
+      flex: 1;
+    }
+    .hero .right img {
+      max-height: 300px;
+    }
+    .categories, .new-arrivals, .trending-products {
+      padding: 40px 20px;
+    }
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .category-grid, .products-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .category, .product-card {
+      flex: 1 1 150px;
+      padding: 20px;
+      border: 1px solid #eee;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+    .footer-links div {
+      max-width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="logo">FOODMART</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for more than 20,000 products" />
+      </div>
+      <div>For Support? +980-34984089 | Your Cart: $1290.00</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="left">
+      <h2>100% Natural</h2>
+      <h1>Fresh Smoothie & Summer Juice</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum.</p>
+      <button>SHOP NOW</button>
+    </div>
+    <div class="right">
+      <img src="smoothie.jpg" alt="Smoothie" />
+    </div>
+  </section>
+
+  <section class="categories">
+    <div class="section-title">Category</div>
+    <div class="category-grid">
+      <div class="category">Fruits & Veges</div>
+      <div class="category">Breads & Sweets</div>
+      <div class="category">Fruits & Veges</div>
+      <div class="category">Fruits & Veges</div>
+      <div class="category">Fruits & Veges</div>
+      <div class="category">Fruits & Veges</div>
+    </div>
+  </section>
+
+  <section class="new-arrivals">
+    <div class="section-title">Newly Arrived Brands</div>
+    <div class="category-grid">
+      <div class="category">Amber Jar<br>Honey best nectar you wish to get</div>
+      <div class="category">Amber Jar<br>Honey best nectar you wish to get</div>
+      <div class="category">Amber Jar<br>Honey best nectar you wish to get</div>
+      <div class="category">Amber Jar<br>Honey best nectar you wish to get</div>
+    </div>
+  </section>
+
+  <section class="trending-products">
+    <div class="section-title">Trending Products</div>
+    <div class="products-grid">
+      <div class="product-card">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card">Sunstar Fresh Melon Juice<br>$18.00</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <div>
+        <strong>Ultras</strong><br>
+        About us<br>Conditions<br>Careers<br>Affiliate Programme<br>Ultras Press
+      </div>
+      <div>
+        <strong>Customer Service</strong><br>
+        FAQ<br>Contact<br>Privacy Policy<br>Returns & Refunds<br>Delivery Info
+      </div>
+      <div>
+        <strong>Subscribe Us</strong><br>
+        Subscribe to our newsletter to get updates about our grand offers.<br>
+        <input type="email" placeholder="Email Address" /> <button>Subscribe</button>
+      </div>
+    </div>
+    <p style="text-align:center; font-size: 12px;">© 2023 Foodmart. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+
