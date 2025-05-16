@@ -35,16 +35,58 @@
       padding: 10px;
       font-size: 14px;
     }
+    nav {
+      padding: 10px 20px;
+      background: #fff;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+      font-size: 14px;
+    }
     .hero {
       display: flex;
       padding: 40px;
       background: #f0f8ff;
+      align-items: center;
     }
     .hero .left {
       flex: 1;
     }
     .hero .right img {
       max-height: 300px;
+    }
+    .hero button {
+      padding: 10px 20px;
+      border: 1px solid #333;
+      background: transparent;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .promo-section {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+    .promo {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    .promo img {
+      max-width: 120px;
+    }
+    .promo.green {
+      background: #ecf6e0;
+    }
+    .promo.pink {
+      background: #fbeeee;
     }
     .categories, .new-arrivals, .trending-products {
       padding: 40px 20px;
@@ -74,6 +116,8 @@
       display: flex;
       justify-content: space-between;
       font-size: 14px;
+      flex-wrap: wrap;
+      gap: 20px;
     }
     .footer-links div {
       max-width: 200px;
@@ -89,53 +133,81 @@
       </div>
       <div>For Support? +980-34984089 | Your Cart: $1290.00</div>
     </div>
+    <nav>
+      <ul>
+        <li><strong>Shop by Departments</strong></li>
+        <li>Women</li>
+        <li>Men</li>
+        <li>Kids</li>
+        <li>Accessories</li>
+        <li>Pages</li>
+        <li>Brand</li>
+        <li>Sale</li>
+        <li>Blog</li>
+      </ul>
+    </nav>
   </header>
 
   <section class="hero">
     <div class="left">
-      <h2>100% Natural</h2>
+      <h2 style="color: #f7b500;">100% Natural</h2>
       <h1>Fresh Smoothie & Summer Juice</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum.</p>
       <button>SHOP NOW</button>
     </div>
     <div class="right">
-      <img src="..\images\image copy 60.png" alt="Smoothie" />
+      <img src="../images/image copy 60.png" alt="Smoothie" />
+    </div>
+  </section>
+
+  <section class="promo-section">
+    <div class="promo green">
+      <h3>20% Off</h3>
+      <p style="font-weight: bold;">Fruits & Vegetables</p>
+      <p><a href="#">Shop Collection →</a></p>
+      <img src="..\images\image copy 62.png" alt="Fruits and Vegetables">
+    </div>
+    <div class="promo pink">
+      <h3>15% Off</h3>
+      <p style="font-weight: bold;">Baked Products</p>
+      <p><a href="#">Shop Collection →</a></p>
+      <img src="..\images\image copy 63.png" alt="Baked Products">
     </div>
   </section>
 
   <section class="categories">
     <div class="section-title">Category</div>
     <div class="category-grid">
-      <div class="category"><img src="..\images\image copy 43.png" alt="Fruits">Fruits & Veges</div>
-      <div class="category"><img src="..\images\image copy 40.png" alt="Breads">Breads & Sweets</div>
-      <div class="category"><img src="..\images\image copy 42.png" alt="Fruits">Fruits & Veges</div>
-      <div class="category"><img src="..\images\image copy 44.png" alt="Fruits">Fruits & Veges</div>
-      <div class="category"><img src="..\images\image copy 39.png" alt="Fruits">Fruits & Veges</div>
-      <div class="category"><img src="..\images\image copy 41.png" alt="Fruits">Fruits & Veges</div>
+      <div class="category"><img src="../images/image copy 43.png" alt="Fruits">Fruits & Veges</div>
+      <div class="category"><img src="../images/image copy 40.png" alt="Breads">Breads & Sweets</div>
+      <div class="category"><img src="../images/image copy 42.png" alt="Fruits">Fruits & Veges</div>
+      <div class="category"><img src="../images/image copy 44.png" alt="Fruits">Fruits & Veges</div>
+      <div class="category"><img src="../images/image copy 39.png" alt="Fruits">Fruits & Veges</div>
+      <div class="category"><img src="../images/image copy 41.png" alt="Fruits">Fruits & Veges</div>
     </div>
   </section>
 
   <section class="new-arrivals">
     <div class="section-title">Newly Arrived Brands</div>
     <div class="category-grid">
-      <div class="category"><img src="..\images\image copy 51.png" alt="Amber Jar">Amber Jar<br>Honey best nectar you wish to get</div>
-      <div class="category"><img src="..\images\image copy 52.png" alt="Amber Jar">Amber Jar<br>Honey best nectar you wish to get</div>
-      <div class="category"><img src="..\images\image copy 53.png" alt="Amber Jar">Amber Jar<br>Honey best nectar you wish to get</div>
-      <div class="category"><img src="..\images\image copy 54.png" alt="Amber Jar">Amber Jar<br>Honey best nectar you wish to get</div>
+      <div class="category"><img src="../images/image copy 51.png" alt="Amber Jar">Amber Jar<br>Honey best nectar you wish to get</div>
+      <div class="category"><img src="../images/image copy 52.png" alt="Amber Jar">Amber Jar<br>Honey best nectar you wish to get</div>
+      <div class="category"><img src="../images/image copy 53.png" alt="Amber Jar">Amber Jar<br>Honey best nectar you wish to get</div>
+      <div class="category"><img src="../images/image copy 54.png" alt="Amber Jar">Amber Jar<br>Honey best nectar you wish to get</div>
     </div>
   </section>
 
   <section class="trending-products">
     <div class="section-title">Trending Products</div>
     <div class="products-grid">
-      <div class="product-card"><img src="..\images\image copy 65.png" alt="Banana">Sunstar Fresh Melon Juice<br>$18.00</div>
-      <div class="product-card"><img src="..\images\image copy 66.png" alt="Box">Sunstar Fresh Melon Juice<br>$18.00</div>
-      <div class="product-card"><img src="..\images\image copy 67.png" alt="Cucumber">Sunstar Fresh Melon Juice<br>$18.00</div>
-      <div class="product-card"><img src="..\images\image copy 70.png" alt="Milk">Sunstar Fresh Melon Juice<br>$18.00</div>
-      <div class="product-card"><img src="..\images\image copy 65.png" alt="Banana">Sunstar Fresh Melon Juice<br>$18.00</div>
-      <div class="product-card"><img src="..\images\image copy 66.png" alt="Box">Sunstar Fresh Melon Juice<br>$18.00</div>
-      <div class="product-card"><img src=".\images\image copy 67.png." alt="Cucumber">Sunstar Fresh Melon Juice<br>$18.00</div>
-      <div class="product-card"><img src="..\images\image copy 70.png" alt="Milk">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card"><img src="../images/image copy 65.png" alt="Banana">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card"><img src="../images/image copy 66.png" alt="Box">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card"><img src="../images/image copy 67.png" alt="Cucumber">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card"><img src="../images/image copy 70.png" alt="Milk">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card"><img src="../images/image copy 65.png" alt="Banana">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card"><img src="../images/image copy 66.png" alt="Box">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card"><img src="../images/image copy 67.png" alt="Cucumber">Sunstar Fresh Melon Juice<br>$18.00</div>
+      <div class="product-card"><img src="../images/image copy 70.png" alt="Milk">Sunstar Fresh Melon Juice<br>$18.00</div>
     </div>
   </section>
 
