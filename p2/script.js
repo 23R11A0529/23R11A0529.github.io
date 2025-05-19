@@ -52,7 +52,6 @@ const dispOrderValue = () => {
   }, 0);
   orderValue.innerHTML = Order Value: ${grandTotal};
 };
-
 const showProducts = () => {
   let str = "";
   products.map((value) => {
