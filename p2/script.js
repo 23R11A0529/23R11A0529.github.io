@@ -7,23 +7,25 @@ const products = [
 const cart = {};
 
 const addToCart = (id) => {
-  //insert id and quantity as 1 ie {1:1} if add button
-  // on box 1 is clicked, then if add button on box 3 is clicked then
-  //cart object should be {1:1,3:1}
-  // write code here....
-  if (!cart[id]) {
-    cart[id] = 1;
+  
+  //cart[id] = 1;
+  if (cart[id]) {
+    cart[id] += 1; 
+  } else {
+    cart[id] = 1;  
   }
-  // console.log(cart);
+
 };
 
 const increment = (id) => {
   cart[id] = cart[id] + 1;
+
   dispCart();
 };
 
 const decrement = (id) => {
   cart[id] = cart[id] - 1;
+   
   dispCart();
 };
 
@@ -49,9 +51,10 @@ const dispCart = () => {
 const dispOrderValue = () => {
   const grandTotal = products.reduce((sum, value) => {
     return sum + value.price * (cart[value.id] ?? 0);
-  }, 0);
+  },0);
   orderValue.innerHTML = Order Value: ${grandTotal};
 };
+
 const showProducts = () => {
   let str = "";
   products.map((value) => {

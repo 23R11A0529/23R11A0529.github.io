@@ -1,17 +1,23 @@
 const customers = [
-  { cart: "1234567890", pin: "1234", name: "John", balance: 0 },
-  { cart: "1234567891", pin: "2345", name: "Cathy", balance: 0 },
+    {card: "1234567890", pin:"1234", name:"John", balance:0},
+    {card: "1234567891", pin:"1235", name:"Cathy", balance:0},
+    
 ];
-function submitForm() {
-  const cardNumber = document.getElementById("cardNumber").value;
-  const pin = document.getElementById("pin").value;
-  const errorMsg = document.getElementById("errorMsg");
 
-  if (users[cardNumber] && users[cardNumber].pin === pin) {
+const login = () => {
+  const cardInput = document.getElementById("card").value.trim();
+  const pinInput = document.getElementById("pin").value.trim();
+  const errorMsg = document.getElementById("error");
+
+  const customer = customers.find(
+    (cust) => cust.card === cardInput && cust.pin === pinInput
+  );
+
+  if (customer) {
     document.getElementById("loginScreen").style.display = "none";
-    document.getElementById("userName").textContent = users[cardNumber].name;
-    document.getElementById("welcomeScreen").style.display = "flex";
+    document.getElementById("welcomeScreen").style.display = "block";
+    document.getElementById("welcomeMsg").innerText = Welcome, ${customer.name}!;
   } else {
-    errorMsg.textContent = "Invalid card number or PIN.";
+    errorMsg.innerText = "Invalid card or PIN. Please try again.";
   }
-}
+};

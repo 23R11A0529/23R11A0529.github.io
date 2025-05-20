@@ -7,6 +7,7 @@
     padding: 20px;
     margin: 10px;
     background-color: orange;
+    height:130px;
 }
 
 header {
@@ -34,5 +35,4 @@ footer {
 
 #root {
     min-height: 600px;
-    padding: 10px;
 }

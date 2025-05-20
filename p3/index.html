@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-  </head>
-  <body>
-    
-   
-  <div id="loginScreen" class="screen">
-    <div class="form-box">
-      <h2>Bank ATM</h2>
-      <input type="text" id="cardNumber" placeholder="Card Number" required>
-      <input type="password" id="pin" placeholder="PIN" required>
-      <button onclick="submitForm()">Submit</button>
-      <p id="errorMsg" class="error"></p>
-    </div>
+</head>
+<body>
+    <h1>Bank ATM</h1>
+    <hr/>
+
+    <div id="loginScreen">
+    <input type="text" id="card" placeholder="Enter Card Number" /><br/><br/>
+    <input type="password" id="pin" placeholder="Enter PIN" /><br/><br/>
+    <button onclick="login()">Submit</button>
+    <p id="error" style="color:red;"></p>
   </div>
 
-  <div id="welcomeScreen" class="screen" style="display: none;">
-    <div class="welcome-box">
-      <h2>Welcome, <span id="userName">John</span>!</h2>
-    </div>
+  <div id="welcomeScreen" style="display: none;">
+    <h2 id="welcomeMsg"></h2>
   </div>
-
-  <hr />
     <script src="index.js"></script>
-
-
-  </body>
+</body>
 </html>
