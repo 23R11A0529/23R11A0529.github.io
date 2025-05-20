@@ -16,7 +16,7 @@ const login = () => {
   if (customer) {
     document.getElementById("loginScreen").style.display = "none";
     document.getElementById("welcomeScreen").style.display = "block";
-    document.getElementById("welcomeMsg").innerText = Welcome, ${customer.name}!;
+    document.getElementById("welcomeMsg").innerText = 'Welcome, ${customer.name}!';
   } else {
     errorMsg.innerText = "Invalid card or PIN. Please try again.";
   }

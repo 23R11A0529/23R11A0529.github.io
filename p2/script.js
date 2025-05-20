@@ -52,7 +52,7 @@ const dispOrderValue = () => {
   const grandTotal = products.reduce((sum, value) => {
     return sum + value.price * (cart[value.id] ?? 0);
   },0);
-  orderValue.innerHTML = Order Value: ${grandTotal};
+  orderValue.innerHTML = 'Order Value: ${grandTotal}';
 };
 
 const showProducts = () => {
