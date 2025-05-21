@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <div class="atm-box">
     <h1>Bank ATM</h1>
-    <hr/>
-
-    <div id="loginScreen">
-    <input type="text" id="card" placeholder="Enter Card Number" /><br/><br/>
-    <input type="password" id="pin" placeholder="Enter PIN" /><br/><br/>
+    <hr />
+    <input type="text" id="cardNumber" placeholder="Enter Card Number" />
+    <input type="password" id="pin" placeholder="Enter PIN" />
     <button onclick="login()">Submit</button>
-    <p id="error" style="color:red;"></p>
+    <p id="errorMsg"></p>
   </div>
 
-  <div id="welcomeScreen" style="display: none;">
-    <h2 id="welcomeMsg"></h2>
+  <div id="welcomeBox" class="welcome-box" style="display: none;">
+    <h2>Welcome, <span id="userName"></span>!</h2>
+
+    <select id="actionType">
+      <option value="Deposit">Deposit</option>
+      <option value="Withdraw">Withdraw</option>
+    </select>
+
+    <p>Enter Amount:</p>
+    <input type="number" id="amount" placeholder="Amount" />
+
+    <button onclick="handleTransaction()">Submit</button>
+    <p id="balanceDisplay">Balance: 0</p>
+
+    <button onclick="logout()" style="margin-top: 10px; background-color: crimson;">Exit</button>
   </div>
-    <script src="index.js"></script>
+
+  <script src="index.js"></script>
 </body>
 </html>
