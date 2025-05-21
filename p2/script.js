@@ -1,31 +1,27 @@
 const products = [
-  { id: 1, name: "p1", price: 40 },
-  { id: 2, name: "p2", price: 45 },
-  { id: 3, name: "p3", price: 70 },
+  { id: 1, name: "p1", price: 34 },
+  { id: 2, name: "p2", price: 50 },
+  { id: 3, name: "p3", price: 75 },
 ];
 
 const cart = {};
 
 const addToCart = (id) => {
-  
-  //cart[id] = 1;
-  if (cart[id]) {
-    cart[id] += 1; 
-  } else {
-    cart[id] = 1;  
-  }
-
+  //insert id and quantity as 1 ie {1:1} if add button
+  // on box 1 is clicked, then if add button on box 3 is clicked then
+  //cart object should be {1:1,3:1}
+  // write code here....
+  cart[id] = 1;
+  // console.log(cart);
 };
 
 const increment = (id) => {
   cart[id] = cart[id] + 1;
-
   dispCart();
 };
 
 const decrement = (id) => {
   cart[id] = cart[id] - 1;
-   
   dispCart();
 };
 
