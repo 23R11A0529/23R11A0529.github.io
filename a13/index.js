@@ -3,4 +3,4 @@ const products=[
     {id: 2,name:"Product 2",price:40},
     {id: 3,name:"Product 3",price:30},
 ];
-products.forEach((product) => console.log(product.name));
+products.forEach((product) => console.log(product.name));cd
