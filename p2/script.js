@@ -69,7 +69,7 @@ const displayCart = () => {
         });
         str += "</div>";
 
-        str += <h3>Total Cost: $${total}</h3>;
+        str += '<h3>Total Cost: $${total}</h3>';
     }
     root.innerHTML = str;
 };
